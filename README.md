@@ -7,15 +7,22 @@ for Arma 3 @Exile mod
 
 ACD_TB Version
 --------------
-* 0.1
+* 0.2
 
 @Exile Version
 ---------------
-* 0.9.61 "Plum"
+* 0.9.8 "Kiwi"
 
 Arma 3 [DEV]
 ---------------
-* 1.61
+* 1.63.137252
+
+FEATURES:
+----
+* Turn any bridge ON and OFF
+* Turn ON/OFF Extra objects added to make bridges look better
+* Turn ON/OFF Bridge map markers
+* Turn ON/OFF Objects/Trees removal for any bridge
 
 INSTALLATION:
 ----
@@ -25,7 +32,7 @@ INSTALLATION:
 ```java
 execVM "custom\acd_TB\run.sqf";
 ```
-* 3) Configure `mpmissions\Exile.Tanoa\custom\acd_TB\acd_TB_config.sqf` to meet your needs.
+* 3) Configure `mpmissions\Exile.Tanoa\custom\acd_TB\acd_TB_config.sqf` to meet your needs or don't.
 * 4) profit
 
 
