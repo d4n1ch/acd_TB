@@ -7,7 +7,7 @@ for Arma 3 @Exile mod
 
 ACD_TB Version
 --------------
-* 0.2
+* 0.2.1
 
 @Exile Version
 ---------------

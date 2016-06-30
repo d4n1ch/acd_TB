@@ -29,7 +29,6 @@ Example:
 	] call GKB_fnc_writeToMap;
 ---------------------------------------------------------------------------------------------------- */
 
-if (local player) then {
 	private ["_alpha", "_color", "_createMarker", "_direction", "_marker", "_markerArray", "_offset", "_position", "_scale", "_symbol", "_text"];
 	_position = _this select 0;
 	_direction = _this select 1 select 0;
@@ -52,13 +51,13 @@ if (local player) then {
 				_marker = "GKB_writeToMap_" + str(_y) + "_" + str(_z);
 				if (markerShape _marker == "") exitWith {};
 			};
-			createMarkerLocal [_marker, [(_position select 0) + (_adjustPosition select 0) + (_offset select 0), (_position select 1) + (_adjustPosition select 1) + (_offset select 1)]];
-			_marker setMarkerShapeLocal "RECTANGLE";
-			_marker setMarkerBrushLocal "SolidFull";
-			_marker setMarkerSizeLocal [_scale, _scale * _adjustSize];
-			_marker setMarkerDirLocal _adjustDirection;
-			_marker setMarkerAlphaLocal _alpha;
-			_marker setMarkerColorLocal _color;
+			createMarker [_marker, [(_position select 0) + (_adjustPosition select 0) + (_offset select 0), (_position select 1) + (_adjustPosition select 1) + (_offset select 1)]];
+			_marker setMarkerShape "RECTANGLE";
+			_marker setMarkerBrush "SolidFull";
+			_marker setMarkerSize [_scale, _scale * _adjustSize];
+			_marker setMarkerDir _adjustDirection;
+			_marker setMarkerAlpha _alpha;
+			_marker setMarkerColor _color;
 			_markerArray set [count _markerArray, _marker];
 		} forEach (_symbol select 0);
 		_offset = [
@@ -67,4 +66,3 @@ if (local player) then {
 		];
 	};
 	_markerArray
-};

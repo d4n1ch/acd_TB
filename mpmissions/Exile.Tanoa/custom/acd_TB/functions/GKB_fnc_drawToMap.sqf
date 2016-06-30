@@ -32,7 +32,6 @@ Example:
 	] call GKB_fnc_drawToMap;
 ---------------------------------------------------------------------------------------------------- */
 
-if (local player) then {
 	private ["_alpha", "_center", "_color", "_direction", "_length", "_marker", "_markerArray", "_posArray", "_width"];
 	_posArray = _this select 0;
 	_width = _this select 1;
@@ -47,13 +46,13 @@ if (local player) then {
 			_marker = "GKB_drawToMap_" + str(_y);
 			if (markerShape _marker == "") exitWith {};
 		};
-		createMarkerLocal [_marker, _center];
-		_marker setMarkerShapeLocal "RECTANGLE";
-		_marker setMarkerBrushLocal "SolidFull";
-		_marker setMarkerSizeLocal [_width / 2, _length / 2];
-		_marker setMarkerDirLocal _direction;
-		_marker setMarkerAlphaLocal _alpha;
-		_marker setMarkerColorLocal _color;
+		createMarker [_marker, _center];
+		_marker setMarkerShape "RECTANGLE";
+		_marker setMarkerBrush "SolidFull";
+		_marker setMarkerSize [_width / 2, _length / 2];
+		_marker setMarkerDir _direction;
+		_marker setMarkerAlpha _alpha;
+		_marker setMarkerColor _color;
 		_markerArray set [count _markerArray, _marker];
 	};
 	{
@@ -61,13 +60,12 @@ if (local player) then {
 			_marker = "GKB_drawToMap_" + str(_y);
 			if (markerShape _marker == "") exitWith {};
 		};
-		createMarkerLocal [_marker, _x];
-		_marker setMarkerShapeLocal "ELLIPSE";
-		_marker setMarkerBrushLocal "SolidFull";
-		_marker setMarkerSizeLocal [_width / 2, _width / 2];
-		_marker setMarkerAlphaLocal _alpha;
-		_marker setMarkerColorLocal _color;
+		createMarker [_marker, _x];
+		_marker setMarkerShape "ELLIPSE";
+		_marker setMarkerBrush "SolidFull";
+		_marker setMarkerSize [_width / 2, _width / 2];
+		_marker setMarkerAlpha _alpha;
+		_marker setMarkerColor _color;
 		_markerArray set [count _markerArray, _marker];
 	} forEach _posArray;
 	_markerArray
-};

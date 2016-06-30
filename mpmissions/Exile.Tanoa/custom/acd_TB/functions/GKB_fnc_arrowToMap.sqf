@@ -32,7 +32,6 @@ Example:
 	] call GKB_fnc_arrowToMap;
 ---------------------------------------------------------------------------------------------------- */
 
-if (local player) then {
 	private ["_alpha", "_color", "_direction", "_length", "_markerArray", "_markerTextArray", "_position", "_positionArray", "_textArray", "_thickness", "_width"];
 	_position = _this select 0;
 	_direction = _this select 1 select 0;
@@ -118,4 +117,3 @@ if (local player) then {
 		_markerArray set [count _markerArray, _x];
 	} forEach _markerTextArray;
 	_markerArray
-};
